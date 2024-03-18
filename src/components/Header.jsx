@@ -8,7 +8,7 @@ export default function Header() {
         <h1>Food Order</h1>
       </div>
       <nav>
-        <button>Cart (0)</button>
+        <button>Giỏ hàng (0)</button>
       </nav>
     </header>
   );
