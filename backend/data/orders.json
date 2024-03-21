@@ -1,1 +1,42 @@
-[]
+[
+  {
+    "items": [
+      {
+        "id": "m3",
+        "name": "Caesar Salad",
+        "price": "20000",
+        "description": "Romaine lettuce tossed in Caesar dressing, topped with croutons and parmesan shavings.",
+        "image": "images/caesar-salad.jpg",
+        "quantity": 1
+      }
+    ],
+    "customer": {
+      "name": "Dương Lê Nguyễn Viết",
+      "email": "duongnguyen2002.bmt@gmail.com",
+      "street": "127b,thôn 8, xã Hòa Khánh",
+      "postal-code": "630000",
+      "city": "Đăk Lăk"
+    },
+    "id": "21.349542498076303"
+  },
+  {
+    "items": [
+      {
+        "id": "m3",
+        "name": "Caesar Salad",
+        "price": "20000",
+        "description": "Romaine lettuce tossed in Caesar dressing, topped with croutons and parmesan shavings.",
+        "image": "images/caesar-salad.jpg",
+        "quantity": 1
+      }
+    ],
+    "customer": {
+      "name": "Dương Lê Nguyễn Viết",
+      "email": "duongnguyen2002.bmt@gmail.com",
+      "street": "127b,thôn 8, xã Hòa Khánh",
+      "postal-code": "630000",
+      "city": "Đăk Lăk"
+    },
+    "id": "404.4000757874249"
+  }
+]

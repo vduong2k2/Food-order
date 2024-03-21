@@ -17,17 +17,33 @@ export default function CheckOut() {
     userProgressCtx.hideCheckOut();
   }
 
+  function handleSubmit(event) {
+    event.preventDefault();
+    const fd = new FormData(event.target);
+    const customerData = Object.fromEntries(fd.entries());
+
+    fetch("http://localhost:3000/orders", {
+      method: "POST",
+      headers: {
+        "Content-type": "Application/json",
+      },
+      body: JSON.stringify({
+        order: { items: cartCtx.items, customer: customerData },
+      }),
+    });
+  }
+
   return (
     <Modal open={userProgressCtx.progress === "checkout"} onClose={handleClose}>
-      <form>
+      <form onSubmit={handleSubmit}>
         <h2>Thanh Toán</h2>
         <p>Tổng Tiền: {currencyFormatting.format(cartTotal)}</p>
 
-        <Input label="Họ và tên" id="full name" type="text"></Input>
-        <Input label="E-mail" id="e-mail" type="text"></Input>
+        <Input label="Họ và tên" id="name" type="text"></Input>
+        <Input label="E-mail" id="email" type="text"></Input>
         <Input label="Địa chỉ" id="street" type="text"></Input>
         <div className="control-row">
-          <Input label="Mã thành phố" id="code" type="type"></Input>
+          <Input label="Mã thành phố" id="postal-code" type="type"></Input>
           <Input label="Thành phố" id="city" type="type"></Input>
         </div>
         <p className="modal-actions">
