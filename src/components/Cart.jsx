@@ -16,9 +16,16 @@ export default function Cart() {
   function handleCloseCart() {
     userProgressCtx.hideCart();
   }
+  function handleShowCheckOut() {
+    userProgressCtx.showCheckOut();
+  }
 
   return (
-    <Modal className="cart" open={userProgressCtx.progress === "cart"}>
+    <Modal
+      className="cart"
+      open={userProgressCtx.progress === "cart"}
+      onClose={userProgressCtx.progress === "cart" ? handleCloseCart : null}
+    >
       <h2>Giỏ hàng của bạn</h2>
       <ul>
         {cartCtx.items.map((item) => (
@@ -35,7 +42,9 @@ export default function Cart() {
         <Button textOnly onClick={handleCloseCart}>
           Đóng
         </Button>
-        <Button>Thanh toán</Button>
+        {cartCtx.items.length > 0 && (
+          <Button onClick={handleShowCheckOut}>Thanh toán</Button>
+        )}
       </p>
     </Modal>
   );
